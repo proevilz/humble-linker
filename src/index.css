@@ -5,3 +5,7 @@
 body {
     height: 100%;
 }
+
+.gameImageContainer:hover svg {
+    opacity: 1;
+}

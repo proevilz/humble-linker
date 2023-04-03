@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CloseButton = (props) => {
+const CloseButton = (props: any) => {
     return (
         <button {...props}>
             <svg
