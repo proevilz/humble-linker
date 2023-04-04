@@ -87,9 +87,8 @@ const ConfigPage = () => {
         )
     }
 
-    useEffect(() => {
+    window.Twitch.ext.configuration.onChanged(() => {
         const config = window.Twitch.ext.configuration.broadcaster?.content
-        console.log('config', config)
         if (config) {
             const { games, panelText, boldGameName, fallbackImageUrl } =
                 JSON.parse(config)
@@ -99,7 +98,7 @@ const ConfigPage = () => {
             setBoldGameName(boldGameName)
             setFallbackImageUrl(fallbackImageUrl)
         }
-    }, [])
+    })
     const getGameImageUrl = () => {
         if (games[previewGameIndex].imageUrl) {
             return games[previewGameIndex].imageUrl

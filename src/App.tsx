@@ -116,7 +116,11 @@ function App({
             'Click the image below to open the Humble Bundle Store in a new tab!'
         if (panelText) {
             text = panelText
-        } else if (matchedGameIndex && config?.panelText) {
+        } else if (
+            matchedGameIndex !== null &&
+            matchedGameIndex !== -1 &&
+            config?.panelText
+        ) {
             text = config.panelText
         }
 
@@ -154,7 +158,6 @@ function App({
             } p-4 ${!isPreview ? 'h-screen' : 'h-full'}`}
         >
             <header className='flex justify-center'>
-                <p>{import.meta.env.MODE}</p>
                 <img
                     src={!inDev ? '.' + humbleLogo : humbleLogo}
                     alt='logo'

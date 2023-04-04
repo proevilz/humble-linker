@@ -4,6 +4,7 @@ class TestMe {
 
     static async main() {
         await zip('./dist', 'dist.zip');
+        console.log('zip generated')
     }
 }
 

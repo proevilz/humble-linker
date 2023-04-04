@@ -8,7 +8,8 @@
         "build": "tsc && vite build && npm run fix-assets && npm run zip",
         "preview": "vite preview",
         "fix-assets": "node assetReplace.js",
-        "zip": "rm -rf dist.zip && node zip.js"
+        "zip": "npm run delete-zip && node zip.js",
+        "delete-zip": "rimraf dist.zip"
     },
     "dependencies": {
         "path": "^0.12.7",
@@ -26,6 +27,7 @@
         "autoprefixer": "^10.4.14",
         "postcss": "^8.4.21",
         "replace-in-file": "^6.3.5",
+        "rimraf": "^4.4.1",
         "tailwindcss": "^3.2.7",
         "typescript": "^4.9.3",
         "vite": "^4.2.0",
